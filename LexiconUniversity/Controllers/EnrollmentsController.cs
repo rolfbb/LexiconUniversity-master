@@ -101,6 +101,7 @@ namespace LexiconUniversity.Controllers
         // GET: Enrollments/Delete/5
         public ActionResult Delete(int? id)
         {
+            //Skapar bekräftelsesida
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -115,7 +116,7 @@ namespace LexiconUniversity.Controllers
 
         // POST: Enrollments/Delete/5
         [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
+        //[ValidateAntiForgeryToken] -- comment to be able to add jquery
         public ActionResult DeleteConfirmed(int id)
         {
             Enrollment enrollment = db.Enrollments.Find(id);
